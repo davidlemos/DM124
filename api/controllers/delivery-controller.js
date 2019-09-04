@@ -29,13 +29,20 @@ class DeliveryController {
       : notFound(req, res);
   }
 
-
   async update (req, res){
-    await Delivery.updateOne({_id: req.params.id}, req.body, function (err, delivery){
-      delivery.nModified 
-      ? res.json(delivery)
+    await Delivery.updateOne({_id: req.params.id}, req.body, function (err, response){
+      response.nModified 
+      ? res.json(response)
       : notFound(req, res); 
     });
+  }
+
+  async delete (req, res){
+    await Delivery.deleteOne({_id: req.params.id}, function (err, response){
+      response.deletedCount 
+      ? res.json(response)
+      : notFound(req, res)
+    })
   }
 }
 

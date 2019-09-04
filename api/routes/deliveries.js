@@ -6,5 +6,6 @@ router.post('/', DeliveryController.store);
 router.get('/', DeliveryController.show);
 router.get('/:id', DeliveryController.showById);
 router.patch('/:id', DeliveryController.update);
+router.delete('/:id', DeliveryController.delete);
 
 module.exports = router;
