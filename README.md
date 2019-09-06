@@ -4,5 +4,5 @@
 https://documenter.getpostman.com/view/5023598/SVfWL5xf
 
 ## Autenticação API
-dm124
-alunoinatel
+Username: dm124 
+Password: alunoinatel 
