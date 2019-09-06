@@ -4,7 +4,7 @@ const notFound = require ('../middleware/not-found');
 class DeliveryController {
   async store (req, res){
     const delivery =  await Delivery.create( req.body );
-    return res.json(delivery);
+    return res.status(201).json(delivery);
   }
 
   async show (req, res){
