@@ -30,9 +30,10 @@ class DeliveryController {
   }
 
   async update (req, res){
-    await Delivery.updateOne({_id: req.params.id}, req.body, function (err, response){
+    const delivery = req.body;
+    await Delivery.updateOne({_id: req.params.id}, delivery, function (err, response){
       response.nModified 
-      ? res.json(response)
+      ? res.json(delivery)
       : notFound(req, res); 
     });
   }
