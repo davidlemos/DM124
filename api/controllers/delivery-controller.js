@@ -40,7 +40,7 @@ class DeliveryController {
   async delete (req, res){
     await Delivery.deleteOne({_id: req.params.id}, function (err, response){
       response.deletedCount 
-      ? res.json(response)
+      ? response.status(200).end()
       : notFound(req, res)
     })
   }
